@@ -1,4 +1,6 @@
+import React from 'react';
 import axios from 'axios';
+import Loader from 'react-loader-spinner';
 
 export default function Weather(props) {
   function handleResponse (response) {
@@ -10,5 +12,13 @@ export default function Weather(props) {
   let apiUrl = `${apiEndpoint}?q=${props.city}&appid=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(handleResponse);
-  return
+  return (
+    <Loader
+    type="Circles"
+    color="blue"
+    height={80}
+    width={80}
+    timeout={3000}
+    />
+  );
 }

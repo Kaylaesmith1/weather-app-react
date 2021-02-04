@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 import Weather from './Weather';
 
@@ -6,8 +7,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-          Testing
-          <Weather city="Clive"/>
+          Testing. Please work.
+          <Weather city="Barcelona"/>
           </h1>
           </header>
     </div>
