@@ -14,11 +14,10 @@ export default function Weather(props) {
   axios.get(apiUrl).then(handleResponse);
   return (
     <Loader
-    type="Circles"
-    color="blue"
+    type="BallTriangle"
+    color="purple"
     height={80}
     width={80}
-    timeout={3000}
     />
   );
 }
