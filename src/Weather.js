@@ -18,13 +18,14 @@ export default function Weather() {
           </div>
                     <div class="col-4">
             <div class="weather-temperature">
-            <img src="" alt="" class="icon" id="icon"></img><h2 class="temperature" id="tempNow"><img src ="http://openweathermap.org/img/wn/02d@2x.png"
+            <img src="" alt="" class="icon" id="icon"></img><h2 class="temperature" id="tempNow" alt="temp"><img src ="http://openweathermap.org/img/wn/02d@2x.png" alt="partsun"
             />55</h2>
             <span class="units">
-              <a href="#"
-               id="fahrenheit-link" class="active">°F</a> |
-              <a href="#"
-               id="celcius-link" class="active">°C</a></span>
+              
+               <span id="fahrenheit-link" class="active">°F | </span>
+              
+               <span id="celcius-link" class="active">°C</span>
+               </span>
             </div>
           </div>
           <div class="col-5">
@@ -59,7 +60,7 @@ export default function Weather() {
           <div class="col">
             <span class="city">Barcelona</span>
             <br />            
-            <img src="" alt="" class="iconBCN"></img><img src ="http://openweathermap.org/img/wn/50n@2x.png" id="iconBCN"
+            <img src="" alt="" class="iconBCN"></img><img src ="http://openweathermap.org/img/wn/50n@2x.png" id="iconBCN" alt="sun"
             />
             <br />
             <span class="high-temperature" id="max-temp-BCN">69°</span>
@@ -69,7 +70,7 @@ export default function Weather() {
             <span class="city">Chicago
             </span>
             <br />
-            <img src="" alt="" class="iconChicago"></img><img src="" alt="" class="iconChicago"></img><img src ="http://openweathermap.org/img/wn/11d@2x.png" id="iconChicago"
+            <img src=""  alt="" class="iconChicago"></img><img src ="http://openweathermap.org/img/wn/11d@2x.png" id="iconChicago" alt="thunder"
             />
             <br />
             <span class="high-temperature" id="max-temp-Chicago">68°</span>
@@ -78,7 +79,7 @@ export default function Weather() {
           <div class="col">
             <span class="city">Berlin</span>
             <br />
-            <img src="" alt="" class="iconBerlin"></img><img src ="http://openweathermap.org/img/wn/09n@2x.png" id="iconBerlin"
+            <img src="" alt="" class="iconBerlin"></img><img src ="http://openweathermap.org/img/wn/09n@2x.png" id="iconBerlin" alt="rain"
             />
             <br />
             <span class="high-temperature" id="max-temp-Berlin">55°</span>
@@ -91,6 +92,7 @@ export default function Weather() {
         <div class="col-2">
           <strong>12:00</strong>
             <img src ="http://openweathermap.org/img/wn/01d@2x.png"
+            alt="sun"
             />
             <div class="weather-forecast-temperature">  
               <span class="high-temperature-f">22°</span><span class="low-temperature-f"> 17°</span>
@@ -100,6 +102,7 @@ export default function Weather() {
       <strong>15:00</strong>
       <br />
       <img src ="http://openweathermap.org/img/wn/09d@2x.png"
+      alt="rain"
             />
       <br />
       <span class="high-temperature-f">53°</span>
@@ -108,8 +111,8 @@ export default function Weather() {
     <div class="col-2">
       <strong>18:00</strong>
       <br />
-      <img src ="http://openweathermap.org/img/wn/13n@2x.png"
-            />
+      <img src ="http://openweathermap.org/img/wn/13n@2x.png" alt="snow"
+        />
       <br />
       <span class="high-temperature-f">51°</span>
       <span class="low-temperature-f">47°</span>
@@ -118,6 +121,7 @@ export default function Weather() {
       <strong>21:00</strong>
       <br />
       <img src ="http://openweathermap.org/img/wn/02n@2x.png"
+      alt="partclouds"
             />
       <br />
       <span class="high-temperature-f">47°</span>
@@ -127,6 +131,7 @@ export default function Weather() {
       <strong>00:00</strong>
       <br />
       <img src ="http://openweathermap.org/img/wn/50n@2x.png"
+      alt="fog"
             />
       <br />
       <span class="high-temperature-f">49°</span>
@@ -136,20 +141,19 @@ export default function Weather() {
       <strong>3:00</strong>
       <br />
       <img src ="http://openweathermap.org/img/wn/01n@2x.png"
+      alt="moon"
             />
       <br />
       <span class="high-temperature-f">52°</span>
       <span class="low-temperature-f">47°</span>
     </div>
       </div>
-
-
       <footer>
         <div class="signature">
           <small>
             <a
             href="https://github.com/Kaylaesmith1/weather-app-react"
-              target="_blank"
+              target="_blank" rel="noreferrer"
              
               >Open-source code </a
             >
