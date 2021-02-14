@@ -1,37 +1,39 @@
-h1 {
+.gdansk {
   color: #596aca;
   text-align: center;
   padding-top: 30px;
   max-width: 70%;
   font-size: 60px;
 }
+
 ul {
   list-style: none;
 }
+
 li .values {
   color: #8ec451;
-  font-weight: normal;
   line-height: 1;
 }
 
 .rightNow {
   color: #42a5f5;
   font-size: 24px;
-  font-weight: normal;
+  font-weight: bold;
   line-height: 30px;
   text-transform: capitalize;
 }
+
 .col-5 {
   color: #596aca;
   font-weight: bold;
   font-size: 24px;
   line-height: 40px;
-  padding: 0 70px;
   letter-spacing: 2px;
+  position: relative;
 }
 
 h4 {
-  max-width: 70%;
+  max-width: 80%;
   color: #52ae54;
   font-size: 28px;
 }
@@ -42,7 +44,7 @@ ul {
   display: inline;
 }
 
-h2 {
+.temperature {
   color: #207bca;
   font-size: 65px;
   font-weight: normal;
@@ -78,11 +80,12 @@ p {
   text-align: center;
 }
 
-.weather-temperature .units {
+.units {
   font-size: 16px;
   position: relative;
   top: -34px;
   color: #666666;
+  font-weight: bold;
 }
 
 .weather-temperature .active {
@@ -184,6 +187,7 @@ button:hover {
   border: 4px solid #666666;
   border-radius: 10px;
 }
+
 .border {
   border: 4px solid #666666;
   border-radius: 10px;

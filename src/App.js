@@ -18,8 +18,8 @@ function App() {
       href="/Users/kaylasmith/Desktop/Coding Work/App.css"
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-          <Weather />
           </header>
+          <Weather />
          
           <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
