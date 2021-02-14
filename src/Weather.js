@@ -4,6 +4,7 @@ export default function Weather() {
   return(
     <div class="container">
       <h1>GDAŃSK</h1>
+      <button className="btn btn-primary">Test</button>
       <h4>
         <div class="row">
           <div class="col-3">
