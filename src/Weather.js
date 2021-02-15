@@ -1,26 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from "axios";
 
 export default function Weather() {
+  
+    const [ready, setReady] = useState(false);
+    const [weatherData, setWeatherData] = useState({});
+    function currentWeather(response) {
+      setWeatherData({
+        city: response.data.name,
+        temperature: Math.round(response.data.main.temp),
+         description: response.data.weather[0].description,
+         humidity: response.data.main.humidity,
+         wind: Math.round(response.data.wind.speed),
+         feels: Math.round(response.data.main.feels_like),
+      })
+    setReady(true);
+  }
+  
+if (ready){
+  
   return(
     <div className="container">
-      <h1 className="gdansk">GDAŃSK</h1>
+      <h1 className="gdansk">{weatherData.city.toUpperCase()}</h1>
       <h4>
         <div className="row">
           <div className="col-3">
             <ul className="rightNow">
               <li id="rightNow">Tuesday 17:55</li>
               <br />
-              <li id="description">Partly cloudy</li>
+              <li id="description">{weatherData.description}</li>
               <br />
-              <li>Feels like: <span id="feels">43</span>°</li>
+              <li>Feels like: <span id="feels">{weatherData.feels}</span>°</li>
               <br />
             </ul>
           </div>
 
           <div className="col-4">
             <div className="weather-temperature">
-            <img src="" alt="" className="icon" id="icon"></img><h2 className="temperature" id="tempNow" alt="temp"><img src ="http://openweathermap.org/img/wn/02d@2x.png" alt="partsun"
-            />55</h2>
+            <img src="" alt="" className="icon" id="icon"></img><h2 className="temperature" id="tempNow" alt="temp"><img src ="http://openweathermap.org/img/wn/02d@2x.png" alt={weatherData.description}
+            />{weatherData.temperature}</h2>
             <span className="units">
               
                <span id="fahrenheit-link" className="active">°F | </span>
@@ -32,8 +50,8 @@ export default function Weather() {
 
           <div className="col-5">
             <ul>
-              <li>Wind: <span className="values" id="wind">15 mph</span></li>
-              <li>Humidity: <span className="values" id="humidity">69%</span></li>
+              <li>Wind: <span className="values" id="wind">{weatherData.wind} mph</span></li>
+              <li>Humidity: <span className="values" id="humidity">{weatherData.humidity}%</span></li>
               <li>Sunrise: <span className="values" id="sunrise">7:11</span></li>
               <li>Sunset: <span className="values" id="sunset">17:48</span></li>
             </ul>
@@ -166,6 +184,17 @@ export default function Weather() {
           >
         </div>
       </footer>
+      
       </div>   
   );
+} else {
+const apiKey = "c5ec52f93b5c1b4b6fe696ad9119316f";
+  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
+  let units = "imperial";
+  let inputCity = "Gdańsk"
+  let apiUrl = `${apiEndpoint}?q=${inputCity}&appid=${apiKey}&units=${units}`;
+  axios.get(apiUrl).then(currentWeather);
+  
+  return "Loading...";
+  }
 }
