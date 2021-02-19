@@ -2,22 +2,22 @@ import React, { useState } from 'react';
 import axios from "axios";
 
 export default function Weather() {
-  
-    const [ready, setReady] = useState(false);
-    const [weatherData, setWeatherData] = useState({});
+    const [weatherData, setWeatherData] = useState({ready: false});
     function currentWeather(response) {
       setWeatherData({
+        ready: true,
         city: response.data.name,
         temperature: Math.round(response.data.main.temp),
          description: response.data.weather[0].description,
+         date: "Tuesday 17:55",
          humidity: response.data.main.humidity,
          wind: Math.round(response.data.wind.speed),
          feels: Math.round(response.data.main.feels_like),
+         iconUrl: "http://openweathermap.org/img/wn/02d@2x.png",
       })
-    setReady(true);
   }
   
-if (ready){
+if (weatherData.ready){
   
   return(
     <div className="container">
@@ -26,7 +26,7 @@ if (ready){
         <div className="row">
           <div className="col-3">
             <ul className="rightNow">
-              <li id="rightNow">Tuesday 17:55</li>
+              <li id="rightNow">{weatherData.date}</li>
               <br />
               <li id="description">{weatherData.description}</li>
               <br />
@@ -37,7 +37,7 @@ if (ready){
 
           <div className="col-4">
             <div className="weather-temperature">
-            <img src="" alt="" className="icon" id="icon"></img><h2 className="temperature" id="tempNow" alt="temp"><img src ="http://openweathermap.org/img/wn/02d@2x.png" alt={weatherData.description}
+            <h2 className="temperature" id="tempNow" alt="temp"><img src ={weatherData.iconUrl} alt={weatherData.description}
             />{weatherData.temperature}</h2>
             <span className="units">
               
