@@ -77,7 +77,7 @@ if (weatherData.ready){
           onClick={updateLocation}
           >Current</button>
 
-          <button id="search-button">Search</button>
+          <button className="search-button">Search</button>
         </form>
       </div>
       <br />
@@ -118,6 +118,7 @@ if (weatherData.ready){
 
     
     <div className="row weather-forecast ml-3 mr-3" id="forecast">
+      
       <WeatherForecast city={weatherData.city}/>  
       </div>      
       <footer>
