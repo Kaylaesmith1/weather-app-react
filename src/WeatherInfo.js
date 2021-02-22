@@ -11,7 +11,6 @@ export default function WeatherInfo(props) {
       <h4>
         <div className="row">
           <div className="col-3">
-            
 
             <ul className="rightNow">
               <li id="rightNow"><FormattedDate date={props.data.date}/></li>
@@ -23,10 +22,12 @@ export default function WeatherInfo(props) {
             </ul>
           </div>
           
-            <div className="col-4">                  
+              <div className="col-4">                  
                       
             <WeatherTemperature fahrenheit={props.data.temperature}/> 
             <img src ={props.data.iconUrl} alt={props.data.description}/>
+
+            
            </div>
             
 

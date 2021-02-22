@@ -76,6 +76,7 @@ if (weatherData.ready){
           id="search-current"
           onClick={updateLocation}
           >Current</button>
+
           <button id="search-button">Search</button>
         </form>
       </div>

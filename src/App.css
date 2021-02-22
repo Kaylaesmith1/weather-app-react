@@ -29,12 +29,16 @@ li .values {
   font-size: 24px;
   line-height: 40px;
   letter-spacing: 2px;
-  position: relative;
+}
+
+.col-4 {
+  background: lightcoral;
 }
 
 h4 {
   color: #52ae54;
   font-size: 28px;
+  max-width: 80%;
 }
 
 p,
@@ -132,8 +136,7 @@ button:hover {
   letter-spacing: 1px;
 }
 
-.weather-forecast,
-.forecast {
+.weather-forecast {
   color: #596aca;
   font-size: 24px;
   border: 4px solid #9ba6df;
