@@ -1,5 +1,6 @@
 import React from 'react';
 import FormattedDate from "./FormattedDate";
+import WeatherTemperature from "./WeatherTemperature";
 
 
 export default function WeatherInfo(props) {
@@ -18,19 +19,16 @@ export default function WeatherInfo(props) {
               <br />
             </ul>
           </div>
+          </div>
 
           <div className="col-4">
-            <div className="weather-temperature">
-            <h2 className="temperature" id="tempNow" alt="temp"><img src ={props.data.iconUrl} alt={props.data.description}
-            />{props.data.temperature}</h2>
-            <span className="units">
-              
-               <span id="fahrenheit-link" className="active">°F | </span>
-              
-               <span id="celcius-link" className="active">°C</span>
-               </span>
+            <WeatherTemperature fahrenheit={props.data.temperature}/>
+            
+          <h2 className="temperature" id="tempNow" alt="temp"><img src ={props.data.iconUrl} alt={props.data.description}
+            />
+            </h2>
             </div>
-          </div>
+            
 
           <div className="col-5">
             <ul>
@@ -40,9 +38,7 @@ export default function WeatherInfo(props) {
               <li>Sunset: <span className="values" id="sunset">17:48</span></li>
             </ul>
           </div>
-          </div>
       </h4>
-
     </div>
   );
 }
