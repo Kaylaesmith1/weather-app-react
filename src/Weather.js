@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 
 export default function Weather(props) {
@@ -16,6 +17,8 @@ export default function Weather(props) {
          humidity: response.data.main.humidity,
          wind: Math.round(response.data.wind.speed),
          feels: Math.round(response.data.main.feels_like),
+         sunrise: response.data.sys.sunrise,
+         sunset: response.data.sys.sunset,
          iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       })
   }
@@ -94,6 +97,10 @@ if (weatherData.ready){
           </div>
         </div>
       </h3>
+
+    <WeatherForecast city={weatherData.city}/>
+
+
 
       <div className="row weather-forecast ml-3 mr-3" id="forecast">
         <div className="col-2">

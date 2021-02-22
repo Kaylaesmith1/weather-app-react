@@ -33,7 +33,6 @@ li .values {
 }
 
 h4 {
-  max-width: 80%;
   color: #52ae54;
   font-size: 28px;
 }
@@ -80,12 +79,11 @@ p {
   text-align: center;
 }
 
-.units {
-  font-size: 16px;
+.unit {
+  font-size: 18px;
   position: relative;
   top: -34px;
   color: #666666;
-  font-weight: bold;
 }
 
 .weather-temperature .active {
