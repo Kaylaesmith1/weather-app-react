@@ -21,6 +21,8 @@ function celcius() {
 
   return (
     <div className="weather-temperature">
+    
+      
             <span className="temperature">{Math.round(props.fahrenheit)}
               </span>
                <span className="unit">°F | {" "}
@@ -32,7 +34,7 @@ function celcius() {
   );
 } else {
   return (
-    <div className="weather-temperature">
+    <div className="weather-temperature">      
             
             <span className="temperature">{Math.round(celcius())}
               </span>

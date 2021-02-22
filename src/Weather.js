@@ -98,70 +98,10 @@ if (weatherData.ready){
         </div>
       </h3>
 
-    <WeatherForecast city={weatherData.city}/>
-
-
-
-      <div className="row weather-forecast ml-3 mr-3" id="forecast">
-        <div className="col-2">
-          <strong>12:00</strong>
-            <img src ="http://openweathermap.org/img/wn/01d@2x.png"
-            alt="sun"
-            />
-            <div className="weather-forecast-temperature">  
-              <span className="high-temperature-f">22°</span><span className="low-temperature-f"> 17°</span>
-            </div>    
-          </div>
-          <div className="col-2">
-      <strong>15:00</strong>
-      <br />
-      <img src ="http://openweathermap.org/img/wn/09d@2x.png"
-      alt="rain"
-            />
-      <br />
-      <span className="high-temperature-f">53°</span>
-      <span className="low-temperature-f">45°</span>
-    </div>
-    <div className="col-2">
-      <strong>18:00</strong>
-      <br />
-      <img src ="http://openweathermap.org/img/wn/13n@2x.png" alt="snow"
-        />
-      <br />
-      <span className="high-temperature-f">51°</span>
-      <span className="low-temperature-f">47°</span>
-    </div>
-    <div className="col-2">
-      <strong>21:00</strong>
-      <br />
-      <img src ="http://openweathermap.org/img/wn/02n@2x.png"
-      alt="partclouds"
-            />
-      <br />
-      <span className="high-temperature-f">47°</span>
-      <span className="low-temperature-f">40°</span>
-    </div>
-    <div className="col-2">
-      <strong>00:00</strong>
-      <br />
-      <img src ="http://openweathermap.org/img/wn/50n@2x.png"
-      alt="fog"
-            />
-      <br />
-      <span className="high-temperature-f">49°</span>
-      <span className="low-temperature-f">42°</span>
-    </div>
-    <div className="col-2">
-      <strong>3:00</strong>
-      <br />
-      <img src ="http://openweathermap.org/img/wn/01n@2x.png"
-      alt="moon"
-            />
-      <br />
-      <span className="high-temperature-f">52°</span>
-      <span className="low-temperature-f">47°</span>
-    </div>
-      </div>
+    
+    <div className="row weather-forecast ml-3 mr-3" id="forecast">
+      <WeatherForecast city={weatherData.city}/>  
+      </div>      
       <footer>
         <div className="signature">
           <small>

@@ -37,7 +37,6 @@ h4 {
   font-size: 28px;
 }
 
-h2,
 p,
 ul {
   display: inline;
@@ -133,7 +132,8 @@ button:hover {
   letter-spacing: 1px;
 }
 
-.weather-forecast {
+.weather-forecast,
+.forecast {
   color: #596aca;
   font-size: 24px;
   border: 4px solid #9ba6df;
