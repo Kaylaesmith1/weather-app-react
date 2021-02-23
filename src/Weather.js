@@ -54,13 +54,13 @@ function showLocation(position) {
   }
 
 
-
 if (weatherData.ready){
   
   return(
     <div className="container">
       <WeatherInfo data={weatherData}/>
 
+  
       <div>
         <form onSubmit={handleSubmit} id="searching">
           <input
@@ -84,6 +84,7 @@ if (weatherData.ready){
 
       <h3 className="recently-searched ml-3 mr-3">
         Recently searched:
+
         <div className="row">
           <div className="col">
             <span className="city">Barcelona</span>
@@ -94,6 +95,8 @@ if (weatherData.ready){
             <span className="high-temperature" id="max-temp-BCN">69°</span>
             <span className="low-temperature" id="min-temp-BCN">54°</span>
           </div>
+
+
           <div className="col">
             <span className="city">Chicago
             </span>
