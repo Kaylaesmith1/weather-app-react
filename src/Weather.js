@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
@@ -6,6 +6,7 @@ import axios from "axios";
 export default function Weather(props) {
     const [weatherData, setWeatherData] = useState({ready: false});
     const [city, setCity] = useState(props.defaultCity);
+    const [unit, setUnit] = useState("fahrenheit");
       
       function currentWeather(response) {
       setWeatherData({
@@ -31,16 +32,14 @@ export default function Weather(props) {
   axios.get(apiUrl).then(currentWeather);
 
   }
-  
   function handleSubmit(event) {
     event.preventDefault();
     search();
-
+    
   }
-
   function handleCityChange(event) {
     setCity(event.target.value);
-
+    
   }
 
 function showLocation(position) {
@@ -58,7 +57,7 @@ if (weatherData.ready){
   
   return(
     <div className="container">
-      <WeatherInfo data={weatherData}/>
+      <WeatherInfo data={weatherData} unit={unit} setUnit={setUnit}/>
 
   
       <div>
@@ -77,7 +76,8 @@ if (weatherData.ready){
           onClick={updateLocation}
           >Current</button>
 
-          <button className="search-button">Search</button>
+          <button className="search-button">
+            Search</button>
         </form>
       </div>
       <br />
@@ -92,7 +92,7 @@ if (weatherData.ready){
             <img src="" alt="" className="iconBCN"></img><img src ="http://openweathermap.org/img/wn/50n@2x.png" id="iconBCN" alt="sun"
             />
             <br />
-            <span className="high-temperature" id="max-temp-BCN">69°</span>
+            <span className="high-temperature" id="max-temp-BCN">69° </span>
             <span className="low-temperature" id="min-temp-BCN">54°</span>
           </div>
 
@@ -104,7 +104,7 @@ if (weatherData.ready){
             <img src=""  alt="" className="iconChicago"></img><img src ="http://openweathermap.org/img/wn/11d@2x.png" id="iconChicago" alt="thunder"
             />
             <br />
-            <span className="high-temperature" id="max-temp-Chicago">68°</span>
+            <span className="high-temperature" id="max-temp-Chicago">68° </span>
             <span className="low-temperature" id="min-temp-Chicago">53°</span>
           </div>
           <div className="col">
@@ -113,16 +113,15 @@ if (weatherData.ready){
             <img src="" alt="" className="iconBerlin"></img><img src ="http://openweathermap.org/img/wn/09n@2x.png" id="iconBerlin" alt="rain"
             />
             <br />
-            <span className="high-temperature" id="max-temp-Berlin">55°</span>
+            <span className="high-temperature" id="max-temp-Berlin">55° </span>
             <span className="low-temperature" id="min-temp-Berlin">49°</span>
           </div>
         </div>
       </h3>
 
-    
     <div className="row weather-forecast ml-3 mr-3" id="forecast">
       
-      <WeatherForecast city={weatherData.city}/>  
+      <WeatherForecast city={weatherData.city} unit={unit} setUnit={setUnit}/>  
       </div>      
       <footer>
         <div className="signature">
@@ -131,7 +130,7 @@ if (weatherData.ready){
             href="https://github.com/Kaylaesmith1/weather-app-react"
               target="_blank" rel="noreferrer"
              
-              >Open-source code </a
+              >Open-source code {" "}</a
             >
             by Kayla Smith</small
           >

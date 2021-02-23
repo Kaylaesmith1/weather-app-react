@@ -19,7 +19,9 @@ function App() {
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
           </header>
+          <div className="row">
           <Weather defaultCity="Gdańsk"/>
+          </div>
          
           <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

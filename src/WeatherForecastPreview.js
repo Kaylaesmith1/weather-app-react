@@ -24,11 +24,25 @@ export default function WeatherForecastPreview(props) {
       <div>
         
       <span className="High">
-    {temperatureHigh}°</span>
-    <span className="Low">{temperatureLow}°</span>
+    {temperatureHigh}° </span>
+    <span className="Low"> {temperatureLow}°</span>
     </div>
     );
   }
+
+  function temperatureCelsius() {
+    let temperatureHigh = Math.round(((props.data.main.temp_max - 32) * 5) / 9);
+    let temperatureLow = Math.round(((props.data.main.temp_min - 32) * 5) / 9);
+
+    return (
+      <div>
+        <span className="High">{temperatureHigh}° </span>
+        <span className="Low">{temperatureLow}°</span>
+      </div>
+    );
+  }
+  
+  if (props.unit === "fahrenheit") {
 
   return (
     <div className="WeatherForecastPreview col">
@@ -37,4 +51,13 @@ export default function WeatherForecastPreview(props) {
       {temperature()}
     </div>
   );
+} else {
+    return (
+      <div className="WeatherForecastPreview col">
+        {hours()}
+        <WeatherIcon code={props.data.weather[0].icon} />
+        {temperatureCelsius()}
+      </div>
+    );
+  }
 }
