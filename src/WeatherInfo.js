@@ -31,10 +31,8 @@ export default function WeatherInfo(props) {
                  <WeatherTemperature fahrenheit={props.data.temperature} unit={props.unit} setUnit={props.setUnit}/> 
                  </span> 
                  </div>
-                 
-            
-
-          <div className="col-5">
+         
+         <div className="col-5">
             <ul>
               <li>Wind: <span className="values" id="wind">{props.data.wind} mph</span></li>
               <li>Humidity: <span className="values" id="humidity">{props.data.humidity}%</span></li>
@@ -71,13 +69,18 @@ export default function WeatherInfo(props) {
               </ul>
             </div>
 ​
-            <div className="col-4">
+            <div className="col-1">
+              <img src={props.data.iconUrl} alt={props.data.description} />
+            </div>
+            <div className="col-3">
+                   <span className="moveTemp">
               <WeatherTemperature
                 fahrenheit={props.data.temperature}
                 unit={props.unit}
                 setUnit={props.setUnit}
               />
-              <img src={props.data.iconUrl} alt={props.data.description} />
+              </span> 
+              
             </div>
 ​
             <div className="col-5">
